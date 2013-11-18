@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!--android:background="@color/black" -->
+
+
+    <!--
+    <include
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".8"
+        layout="@layout/title_cast_button" />
+-->
+
+    <include
+        android:id="@+id/video_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.0"
+        layout="@layout/video_player" />
+
+    <!--
+    <TextView
+        android:id="@+id/currently_playing"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".8"
+        android:gravity="center"
+        android:text="@string/tap_to_select"
+        android:background="@drawable/border"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+-->
+    <!--
+    <include
+        android:id="@+id/media_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        layout="@layout/media_buttons"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp" />
+
+    <include
+        android:id="@+id/play_status"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        layout="@layout/play_status" />
+        -->
+
+    <include
+        android:id="@+id/media_selection"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        layout="@layout/media_list_selection" />
+
+</LinearLayout>
