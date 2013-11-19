@@ -9,6 +9,7 @@ import android.util.Log;
 public class StatusRunner implements Runnable {
     private MainActivity mActivity = null;
     private static final String TAG = StatusRunner.class.getSimpleName();
+    private int count = 0;
 
     public StatusRunner(MainActivity activity){
         Log.v(TAG, "in StatusRunner constructor");
@@ -19,12 +20,13 @@ public class StatusRunner implements Runnable {
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {
-                //if (!mActivity.isActivityStopped() ) {
+                if (!mActivity.isActivityStopped() ) {
+                    //Log.e(TAG, "threadid = " + Thread.currentThread().getId() + ". statusrunner count = " + count++);
                     mActivity.updateStatus();
                     Thread.sleep(1500);
-                //} else {
-                //    break;
-                //}
+                } else {
+                   break;
+                }
             } catch (Exception e) {
                 Log.e(TAG, "Thread interrupted: " + e);
             }
