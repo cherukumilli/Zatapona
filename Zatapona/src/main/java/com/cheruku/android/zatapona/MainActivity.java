@@ -50,28 +50,25 @@ public class MainActivity extends FragmentActivity
     private boolean mActivityStopped = true;
 
     private CastContext mCastContext = null;
-    private CastMedia mMedia;
-    private ContentMetadata mMetaData;
+    private CastMedia mMedia = null;
+    private ContentMetadata mMetaData = null;
 
-    private SampleMediaRouteDialogFactory mDialogFactory;
-    private MediaRouter mMediaRouter;
-    private MediaRouteSelector mMediaRouteSelector;
-    private ApplicationSession mSession;
-    private MediaProtocolMessageStream mMessageStream;
-    private CastDevice mSelectedDevice;
-    private MediaRouteButton mMediaRouteButton;
-    private MediaRouter.Callback mMediaRouterCallback;
-    //private TextView mStatusText;
-    private TextView mCurrentlyPlaying;
-    private MediaSelectionDialog mMediaSelectionDialog;
-    //private ImageButton mPlayPauseButton;
-    //private ImageButton mStopButton;
-    private MenuItem mRegistrationStateMenuItem;
-    private MediaProtocolCommand mStatus;
+    private SampleMediaRouteDialogFactory mDialogFactory = null;
+    private MediaRouter mMediaRouter = null;
+    private MediaRouteSelector mMediaRouteSelector = null;
+    private ApplicationSession mSession = null;
+    private MediaProtocolMessageStream mMessageStream = null;
+    private CastDevice mSelectedDevice = null;
+    private MediaRouteButton mMediaRouteButton = null;
+    private MediaRouter.Callback mMediaRouterCallback = null;
+    private TextView mCurrentlyPlaying = null;
+    private MediaSelectionDialog mMediaSelectionDialog = null;
+    private MenuItem mRegistrationStateMenuItem = null;
+    private MediaProtocolCommand mStatus = null;
     private String mCurrentItemId=null;
-    private MediaRouter.RouteInfo mCurrentRoute;
-    private SharedPreferences mSharedPreferences;
-    private SharedPreferences.OnSharedPreferenceChangeListener mListener;
+    private MediaRouter.RouteInfo mCurrentRoute = null;
+    private SharedPreferences mSharedPreferences = null;
+    private SharedPreferences.OnSharedPreferenceChangeListener mListener = null;
     private Thread mStatusRunnerThread = null;
     private MediaController mMediaController = null;
     private List<CastMedia> mVideos = null;
@@ -108,7 +105,6 @@ public class MainActivity extends FragmentActivity
 
         setupMediaRouteButtonOnActionBar();
 
-        initButtons();
         initSharedPreferences();
 
         //display the sender device registration window if the user hasn't registered the device
@@ -136,9 +132,6 @@ public class MainActivity extends FragmentActivity
 
     private void initViews(){
         logVIfEnabled("in initViews");
-        //mPlayPauseButton = (ImageButton) findViewById(R.id.play_pause_button);
-        //mStopButton = (ImageButton) findViewById(R.id.stop_button);
-        //mStatusText = (TextView) findViewById(R.id.play_status_text);
         mCurrentlyPlaying = (TextView) findViewById(R.id.currently_playing);
     }
     protected void startStatusRunnerThread(){
@@ -248,38 +241,6 @@ public class MainActivity extends FragmentActivity
     }
 
     /**
-     * Initializes all buttons by adding user controls and listeners.
-     */
-    public void initButtons() {
-        logVIfEnabled("in initButtons");
-
-        /*mPlayPauseButton.setEnabled(false);
-        mPlayPauseButton.setImageResource(R.drawable.pause_button);
-        mPlayPauseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onPlayClicked(!mPlayButtonShowsPlay);
-            }
-        });
-        mStopButton.setEnabled(false);
-        mStopButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onStopClicked();
-            }
-        });
-
-        mCurrentlyPlaying.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logVIfEnabled("Selecting Media");
-                mMediaSelectionDialog.setTitle(getResources().getString(R.string.medial_dialog_title));
-                mMediaSelectionDialog.show();
-            }
-        });*/
-    }
-
-    /**
      * Stores and attempts to load the passed piece of media.
      */
     protected void mediaSelected(CastMedia media) {
@@ -312,14 +273,7 @@ public class MainActivity extends FragmentActivity
         logVIfEnabled("in openSession");
         mSession = new ApplicationSession(mCastContext, mSelectedDevice);
 
-        // TODO: The below lines allow you to specify either that your application uses the default
-        // implementations of the Notification and Lock Screens, or that you will be using your own.
         int flags = 0;
-
-        // Comment out the below line if you are not writing your own Notification Screen.
-        // flags |= ApplicationSession.FLAG_DISABLE_NOTIFICATION;
-        // Comment out the below line if you are not writing your own Lock Screen.
-        // flags |= ApplicationSession.FLAG_DISABLE_LOCK_SCREEN_REMOTE_CONTROL;
         mSession.setApplicationOptions(flags);
 
         logVIfEnabled("Beginning session with context: " + mCastContext);
@@ -356,15 +310,8 @@ public class MainActivity extends FragmentActivity
             }
         });
 
-        //mPlayPauseButton.setEnabled(true);
-        //mStopButton.setEnabled(true);
         try {
             logVIfEnabled("Starting session with app name " + getString(R.string.app_name));
-
-            // TODO: To run your own copy of the receiver, you will need to set app_name in
-            // /res/strings.xml to your own appID, and then upload the provided receiver
-            // to the url that you whitelisted for your app.
-            // The current value of app_name is "YOUR_APP_ID_HERE".
             mSession.startSession(getString(R.string.app_name));
         } catch (IOException e) {
             Log.e(TAG, "Failed to open session", e);
@@ -551,7 +498,6 @@ public class MainActivity extends FragmentActivity
         mActivityStopped = false;
         super.onStart();
         mMediaRouter.addCallback(mMediaRouteSelector, mMediaRouterCallback, MediaRouter.CALLBACK_FLAG_REQUEST_DISCOVERY);
-        //mMediaRouter.addCallback(mMediaRouteSelector, mMediaRouterCallback, MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
         logVIfEnabled("onStart called and callback added");
 
         startStatusRunnerThread();
@@ -673,6 +619,19 @@ public class MainActivity extends FragmentActivity
         }
     }
 
+    private void setMediaFromStream(String title, String videoUrl){
+        logVIfEnabled("in setMediaFromStream");
+        try{
+            mMedia = new CastMedia();
+            if (mMedia.getTitle() == null){
+                mMedia.setTitle(title);
+                mMedia.setVideoUrl(videoUrl);
+            }
+        }catch (Exception e){
+            Log.e(TAG, "setMediaFromStream Exception: " + e);
+        }
+    }
+
     /**
      * Updates the status of the currently playing video in the dedicated message view.
      */
@@ -686,12 +645,13 @@ public class MainActivity extends FragmentActivity
                 try {
                     setMediaRouteButtonVisible();
                     if (mCurrentRoute  == null) return;  //DC
-                    if (mMessageStream != null) {
-                        String msgStreamUrl=mMessageStream.getContentId();
-                        String videoViewUrl=(String)mVideoView.getTag();
-                        if (msgStreamUrl != null){
-                            logVIfEnabled("mVideoView.gettag=" + videoViewUrl +". messagestream videourl=" + msgStreamUrl);
 
+                    if (mMessageStream != null) {
+                        String msgStreamUrl = mMessageStream.getContentId();
+                        logVIfEnabled("messagestream videourl=" + msgStreamUrl);
+                        String videoViewUrl = (String)mVideoView.getTag();
+                        logVIfEnabled("mVideoView.gettag=" + videoViewUrl);
+                        if (msgStreamUrl != null){
                             if (!msgStreamUrl.equals(videoViewUrl)){
                                 mVideoView.setVideoPath(msgStreamUrl);
                                 mVideoView.setTag(msgStreamUrl);
@@ -700,15 +660,15 @@ public class MainActivity extends FragmentActivity
                                 mVideoView.start();
                                 mVideoView.pause();
                             }
+
                             if (!mVideoView.isPlaying()){
                                 int streamPosition = (Double.valueOf(mMessageStream.getStreamPosition()*1000)).intValue();
-                                logVIfEnabled("streamposition = "+streamPosition);
+                                logVIfEnabled("streamposition = " + streamPosition);
                                 mVideoView.seekTo(streamPosition);
                             }
-                            if (mMedia == null) mMedia = new CastMedia();
-                            if (mMedia.getTitle()==null){
-                                mMedia.setTitle(mMessageStream.getTitle());
-                                mMedia.setVideoUrl(msgStreamUrl);
+
+                            if (mMedia == null || mMedia.getTitle() == null){
+                                setMediaFromStream(mMessageStream.getTitle(), msgStreamUrl);
                             }
                         } else {
                             logVIfEnabled("mMessageStream.getcontentID is null");
@@ -726,6 +686,7 @@ public class MainActivity extends FragmentActivity
                         //mStatusText.setText(currentStatus);
                     } else {
                         //mStatusText.setText(getResources().getString(R.string.tap_icon));
+                        Log.e(TAG, "updateStatus.mMessageStream == null");
                     }
 
                     updateCurrentlyPlaying();
@@ -742,10 +703,12 @@ public class MainActivity extends FragmentActivity
      * devices.
      */
     protected final void setMediaRouteButtonVisible() {
-        logVIfEnabled("in setMediaRouteButtonVisible()");
-        mMediaRouteButton.setVisibility(View.VISIBLE);
-        logVIfEnabled("Media route available " + mMediaRouter.isRouteAvailable(mMediaRouteSelector, 0));
-        //mMediaRouteButton.setVisibility(mMediaRouter.isRouteAvailable(mMediaRouteSelector, 0) ? View.VISIBLE : View.GONE);
+        try{
+            logVIfEnabled("in setMediaRouteButtonVisible()");
+            mMediaRouteButton.setVisibility(View.VISIBLE);
+        } catch (Exception e){
+            Log.e(TAG, "setMediaRouteButtonVisible. " + e);
+        }
     }
 
     /**
@@ -753,24 +716,25 @@ public class MainActivity extends FragmentActivity
      */
     protected void updateCurrentlyPlaying() {
         logVIfEnabled("in updateCurrentlyPlaying");
-        if (mMedia.getTitle() != null) {
-            //String playing = "Media Selected: " + mMedia.getTitle();
-            String playing = "<font color=#0066FF>Media Selected: " + mMedia.getTitle() + "</font>";
+        try{
+            if (mMedia != null && mMedia.getTitle() != null) {
+                String playing = "<font color=#0066FF>Media Selected: " + mMedia.getTitle() + "</font>";
 
-            if (mMessageStream != null) {
-                String colorString = "<font color=\"red\">";
-                colorString += ". Casting to: " + mSelectedDevice.getFriendlyName();
-                colorString += "</font>";
-                playing += colorString;
+                if (mMessageStream != null) {
+                    String colorString = "<font color=\"red\">";
+                    colorString += ". Casting to: " + mSelectedDevice.getFriendlyName();
+                    colorString += "</font>";
+                    playing += colorString;
+                }
+                mCurrentlyPlaying.setText(Html.fromHtml(playing));
+            } else {
+                String castString = "<font color=#FF0000>";
+                castString += getResources().getString(R.string.tap_to_select);
+                castString += "</font>";
+                mCurrentlyPlaying.setText(Html.fromHtml(castString));
             }
-            mCurrentlyPlaying.setText(Html.fromHtml(playing));
-            //mCurrentlyPlaying.setText(playing);
-        } else {
-            String castString = "<font color=#FF0000>";
-            castString += getResources().getString(R.string.tap_to_select);
-            castString += "</font>";
-            mCurrentlyPlaying.setText(Html.fromHtml(castString));
-            //mCurrentlyPlaying.setText(getResources().getString(R.string.tap_to_select));
+        } catch (Exception e){
+            Log.e(TAG, "Exception in updateCurrentlyPlaying: " + e);
         }
     }
 
