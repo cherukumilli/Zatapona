@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <ImageButton
+        android:id="@+id/cast_media_mute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/seekBar"
+        android:layout_alignBottom="@+id/seekBar"
+        android:clickable="true"
+        android:onClick="mediaSelected"
+        android:src="@android:drawable/ic_lock_silent_mode_off"
+        android:contentDescription="@string/castmediamute_contentdescription"
+        android:layout_centerVertical="true"
+        />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cast_media_mute"
+        android:gravity="bottom"
+        android:layout_centerVertical="true"
+        />
+
+</RelativeLayout>

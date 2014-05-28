@@ -4,9 +4,9 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.MediaRouteButton;
 import android.support.v7.media.MediaRouteSelector;
 import android.support.v7.media.MediaRouter;
 import android.text.Html;
@@ -15,6 +15,10 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.MediaController;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.cheruku.android.zatapona.castmediaendpoint.model.CastMedia;
 import com.cheruku.android.zatapona.mediaroutedialog.SampleMediaRouteDialogFactory;
@@ -31,12 +35,6 @@ import com.google.cast.MediaRouteHelper;
 import com.google.cast.MediaRouteStateChangeListener;
 import com.google.cast.SessionError;
 
-import android.support.v7.app.MediaRouteButton;
-import android.widget.ImageButton;
-import android.widget.MediaController;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.VideoView;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -123,7 +121,7 @@ public class MainActivity extends FragmentActivity
         mDialogFactory = new SampleMediaRouteDialogFactory();
         mMediaRouterCallback = new CustomMediaRouterCallback(this);
         mMediaSelectionDialog = new MediaSelectionDialog(this);
-        mVideos = new ArrayList<CastMedia>();
+        mVideos = new ArrayList<>();
         mMediaController = new MediaController(this);
         mVideoView = (VideoView)findViewById(R.id.video_player);
         mVideoView.setMediaController(mMediaController);
@@ -134,12 +132,14 @@ public class MainActivity extends FragmentActivity
         logVIfEnabled("in initViews");
         mCurrentlyPlaying = (TextView) findViewById(R.id.currently_playing);
     }
+
     protected void startStatusRunnerThread(){
         logVIfEnabled("in startStatusRunnerThread");
         Runnable runnable = new StatusRunner(this);
         mStatusRunnerThread = new Thread(runnable);
         mStatusRunnerThread.start();
     }
+
     private void initSharedPreferences(){
         logVIfEnabled("in initSharedPreferences");
         mSharedPreferences = getSharedPreferences(PREFS_NAME, 0);
@@ -157,10 +157,12 @@ public class MainActivity extends FragmentActivity
         };
         mSharedPreferences.registerOnSharedPreferenceChangeListener(mListener);
     }
+
     private boolean senderDeviceRegistered(){
         logVIfEnabled("in senderDeviceRegistered");
         return mSharedPreferences.getBoolean(DEVICE_REGISTERED, false);
     }
+
     private void displayRegistrationWindow() {
         logVIfEnabled("in displayRegistrationWindow");
         Intent intent = new Intent(this, RegisterActivity.class);
@@ -231,7 +233,6 @@ public class MainActivity extends FragmentActivity
                 }
                 break;
             case R.id.action_settings:
-
                 break;
             default:
                 break;
@@ -252,17 +253,18 @@ public class MainActivity extends FragmentActivity
 
         mVideoView.setVideoPath(mMedia.getVideoUrl());
         mVideoView.setTag(mMedia.getVideoUrl());
+        mVideoView.pause();
         mVideoView.requestFocus();
-        mVideoView.start();
-        //mMediaController.show(0);
+
+        mMediaController.show(0);
 
         if (mMessageStream != null) {
-            loadMedia();
-            logVIfEnabled("after mediaselected.loadMedia. mMedia.getVideoUrl="+mMedia.getVideoUrl()+". mMessageStream.getContentId="+mMessageStream.getContentId());
-            mVideoView.pause();
-            //mVideoView.stopPlayback();
-            //mVideoView.suspend();
+            loadMedia();  logVIfEnabled("after mediaselected.loadMedia. mMedia.getVideoUrl="+mMedia.getVideoUrl()+". mMessageStream.getContentId="+mMessageStream.getContentId());
+            mVideoView.setBackgroundResource(R.drawable.ic_launcher);
             updateStatus();
+        }
+        else{
+            mVideoView.start();
         }
     }
 
@@ -619,83 +621,84 @@ public class MainActivity extends FragmentActivity
         }
     }
 
-    private void setMediaFromStream(String title, String videoUrl){
-        logVIfEnabled("in setMediaFromStream");
+    /**
+     * Updates the video view with the status of the currently playing media.
+     */
+    private void updateVideoView(){
+        logVIfEnabled("in initializeVideoView()");
         try{
-            mMedia = new CastMedia();
-            if (mMedia.getTitle() == null){
-                mMedia.setTitle(title);
-                mMedia.setVideoUrl(videoUrl);
+            if (mMessageStream != null) { // if chromecast is already streaming video
+                String msgStreamUrl = mMessageStream.getContentId(); logVIfEnabled("initializeVideoView()--messagestream videourl=" + msgStreamUrl);
+                String videoViewUrl = (String)mVideoView.getTag();   logVIfEnabled("initializeVideoView()--mVideoView.gettag=" + videoViewUrl);
+                if (msgStreamUrl != null){
+                    //sync up videopath in video player with the chromecast video
+                    if (!msgStreamUrl.equals(videoViewUrl)){
+                        mVideoView.setVideoPath(msgStreamUrl);
+                        mVideoView.setTag(msgStreamUrl);
+                        logVIfEnabled("initializeVideoView()--setVideoPath to: " + msgStreamUrl);
+                        mVideoView.requestFocus();
+                    }
+
+                    //if video is playing in chromecast then pause in the sender device
+                    if (mVideoView.isPlaying()){
+                        mVideoView.pause();
+                        mMediaController.show(0);
+                    }
+
+                    //sync up stream position in video player to that from chromecast
+                    int streamPosition = (Double.valueOf(mMessageStream.getStreamPosition()*1000)).intValue(); logVIfEnabled("initializeVideoView()--streamposition = " + streamPosition);
+                    mVideoView.seekTo(streamPosition);
+
+                    //if mMedia was destroyed then reinitialize it with the media that is currently playing in Chromecast
+                    if (mMedia == null || mMedia.getTitle() == null) {
+                        mMedia = new CastMedia().setTitle(mMessageStream.getTitle()).setVideoUrl(msgStreamUrl);
+                    }
+                }
+            }
+            else {
+                logVIfEnabled("initializeVideoView()--mMessageStream == null");
             }
         }catch (Exception e){
-            Log.e(TAG, "setMediaFromStream Exception: " + e);
+            Log.e(TAG, "Status request failed: " + e);
         }
     }
 
     /**
-     * Updates the status of the currently playing video in the dedicated message view.
+     * Updates the status of the currently playing video in the dedicated video view and message view.
      */
     public void updateStatus() {
         logVIfEnabled("in updateStatus");
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                logVIfEnabled("*******Inside run()");
+                logVIfEnabled("Inside updateStatus--run()");
+                if (mCurrentRoute  == null) return;  //if not connected to chromecast then do nothing
 
                 try {
-                    setMediaRouteButtonVisible();
-                    if (mCurrentRoute  == null) return;  //DC
-
-                    if (mMessageStream != null) {
-                        String msgStreamUrl = mMessageStream.getContentId();
-                        logVIfEnabled("messagestream videourl=" + msgStreamUrl);
-                        String videoViewUrl = (String)mVideoView.getTag();
-                        logVIfEnabled("mVideoView.gettag=" + videoViewUrl);
-                        if (msgStreamUrl != null){
-                            if (!msgStreamUrl.equals(videoViewUrl)){
-                                mVideoView.setVideoPath(msgStreamUrl);
-                                mVideoView.setTag(msgStreamUrl);
-                                logVIfEnabled("setVideoPath to: " + msgStreamUrl);
-                                mVideoView.requestFocus();
-                                mVideoView.start();
-                                mVideoView.pause();
-                            }
-
-                            if (!mVideoView.isPlaying()){
-                                int streamPosition = (Double.valueOf(mMessageStream.getStreamPosition()*1000)).intValue();
-                                logVIfEnabled("streamposition = " + streamPosition);
-                                mVideoView.seekTo(streamPosition);
-                            }
-
-                            if (mMedia == null || mMedia.getTitle() == null){
-                                setMediaFromStream(mMessageStream.getTitle(), msgStreamUrl);
-                            }
-                        } else {
-                            logVIfEnabled("mMessageStream.getcontentID is null");
-                        }
-
-                        mStatus = mMessageStream.requestStatus();
-
-                        String currentStatus = "Player State: " + mMessageStream.getPlayerState() + "\n";
-                        currentStatus += "Device " + mSelectedDevice.getFriendlyName() + "\n";
-                        currentStatus += "Title " + mMessageStream.getTitle() + "\n";
-                        currentStatus += "Current Position: " + mMessageStream.getStreamPosition() + "\n";
-                        currentStatus += "Duration: " + mMessageStream.getStreamDuration() + "\n";
-                        currentStatus += "Volume set at: " + (mMessageStream.getVolume() * 100) + "%\n";
-                        currentStatus += "requestStatus: " + mStatus.getType() + "\n";
-                        //mStatusText.setText(currentStatus);
-                    } else {
-                        //mStatusText.setText(getResources().getString(R.string.tap_icon));
-                        Log.e(TAG, "updateStatus.mMessageStream == null");
-                    }
-
-                    updateCurrentlyPlaying();
-
+                    updateVideoView(); // update the videoview in the sender like smartphone, etc...
+                    updateCurrentlyPlaying(); //update the currently playing field with the currently playing video
                 } catch (Exception e) {
                     Log.e(TAG, "Status request failed: " + e);
                 }
             }
         });
+    }
+
+    private void logCurrentStatusOfStream(){
+        logVIfEnabled("in getCurrentStatusOfStream");
+        try{
+            mStatus = mMessageStream.requestStatus();
+            String currentStatus = "Player State: " + mMessageStream.getPlayerState() + "\n";
+            currentStatus += "Device " + mSelectedDevice.getFriendlyName() + "\n";
+            currentStatus += "Title " + mMessageStream.getTitle() + "\n";
+            currentStatus += "Current Position: " + mMessageStream.getStreamPosition() + "\n";
+            currentStatus += "Duration: " + mMessageStream.getStreamDuration() + "\n";
+            currentStatus += "Volume set at: " + (mMessageStream.getVolume() * 100) + "%\n";
+            currentStatus += "requestStatus: " + mStatus.getType() + "\n";
+            logVIfEnabled(currentStatus);
+        }catch (Exception e){
+            Log.e(TAG, "Exception in getCurrentStatusOfStream: "+ e);
+        }
     }
 
     /**
@@ -740,26 +743,41 @@ public class MainActivity extends FragmentActivity
 
     public void onQueryCastMediaTaskCompleted(){
         logVIfEnabled("in onQueryCastMediaTaskCompleted");
-        mVideos = mQueryCastMediaTask.getCastMediaList();
-        (mMediaAdapter = new MediaAdapter(this)).populateMediaList();
-        mDownloadImagesTask = new DownloadImagesTask(this, getImageUrlList());
-        mDownloadImagesTask.execute(); //get the bitmaps for each of the videos
+        try{
+            mVideos = mQueryCastMediaTask.getCastMediaList();
+            (mMediaAdapter = new MediaAdapter(this)).populateMediaList();
+            mDownloadImagesTask = new DownloadImagesTask(this, getImageUrlList());
+            mDownloadImagesTask.execute(); //get the bitmaps for each of the videos
+        }catch(Exception e){
+            Log.e(TAG, "Exception in onQueryCastMediaTaskCompleted: " + e);
+        }
     }
+
     public void onDownloadImagesTaskCompleted(){
         logVIfEnabled("in onDownloadImagesTaskCompleted");
-
-        mImages = mDownloadImagesTask.getBitmapList();
-        mMediaAdapter.setImagesDownloaded(true);
-        mMediaAdapter.refreshMediaList();
+        try{
+            mImages = mDownloadImagesTask.getBitmapList();
+            mMediaAdapter.setImagesDownloaded(true);
+            mMediaAdapter.refreshMediaList();
+        } catch (Exception e){
+            Log.e(TAG, "Exception in onDownloadImagesTaskCompleted: " + e);
+        }
     }
+
     private ArrayList<String> getImageUrlList(){
         logVIfEnabled("in getImageUrlList");
-        ArrayList<String> imageUrlList = new ArrayList<String>();
-        for (CastMedia castMedia : mVideos){
-            imageUrlList.add(castMedia.getImageUrl());
+        try{
+            ArrayList<String> imageUrlList = new ArrayList<String>();
+            for (CastMedia castMedia : mVideos){
+                imageUrlList.add(castMedia.getImageUrl());
+            }
+            return imageUrlList;
+        } catch (Exception e){
+            Log.e(TAG, "Exception in getImageUrlList: " + e);
+            return null;
         }
-        return imageUrlList;
     }
+
     public ApplicationSession getSession() { return mSession; }
     public void setMessageStream(MediaProtocolMessageStream messageStream) {this.mMessageStream = messageStream;}
     public void setSelectedDevice(CastDevice selectedDevice) {this.mSelectedDevice = selectedDevice;}

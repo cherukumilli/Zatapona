@@ -1,0 +1,192 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://zatapona-familytv.appspot.com/_ah/api",
+  "name" : "noteendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://zatapona-familytv.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "cheruku.com",
+  "ownerName" : "cheruku.com",
+  "packagePath" : "android.zatapona",
+  "methods" : {
+    "noteendpoint.getNote" : {
+      "path" : "note/{id}",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.cheruku.android.zatapona.NoteEndpoint.getNote",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "noteendpoint.updateNote" : {
+      "path" : "note",
+      "httpMethod" : "PUT",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.cheruku.android.zatapona.NoteEndpoint.updateNote",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "noteendpoint.insertNote" : {
+      "path" : "note",
+      "httpMethod" : "POST",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.cheruku.android.zatapona.NoteEndpoint.insertNote",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "noteendpoint.listNote" : {
+      "path" : "note",
+      "httpMethod" : "GET",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.cheruku.android.zatapona.NoteEndpoint.listNote",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "noteendpoint.removeNote" : {
+      "path" : "note/{id}",
+      "httpMethod" : "DELETE",
+      "scopes" : [ ],
+      "audiences" : [ ],
+      "clientIds" : [ ],
+      "rosyMethod" : "com.cheruku.android.zatapona.NoteEndpoint.removeNote",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Note" : {
+        "id" : "Note",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "emailAddress" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_Note" : {
+        "id" : "CollectionResponse_Note",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Note"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.cheruku.android.zatapona.NoteEndpoint.getNote" : {
+        "response" : {
+          "$ref" : "Note"
+        }
+      },
+      "com.cheruku.android.zatapona.NoteEndpoint.updateNote" : {
+        "request" : {
+          "$ref" : "Note"
+        },
+        "response" : {
+          "$ref" : "Note"
+        }
+      },
+      "com.cheruku.android.zatapona.NoteEndpoint.insertNote" : {
+        "request" : {
+          "$ref" : "Note"
+        },
+        "response" : {
+          "$ref" : "Note"
+        }
+      },
+      "com.cheruku.android.zatapona.NoteEndpoint.listNote" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Note"
+        }
+      },
+      "com.cheruku.android.zatapona.NoteEndpoint.removeNote" : {
+        "response" : {
+          "$ref" : "Note"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Zatapona/Zatapona.iml" filepath="$PROJECT_DIR$/Zatapona/Zatapona.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zatapona-AppEngine/Zatapona-AppEngine.iml" filepath="$PROJECT_DIR$/Zatapona-AppEngine/Zatapona-AppEngine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zatapona-endpoints/Zatapona-endpoints.iml" filepath="$PROJECT_DIR$/Zatapona-endpoints/Zatapona-endpoints.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Zatapona-endpoints-endpoints/Zatapona-endpoints-endpoints.iml" filepath="$PROJECT_DIR$/Zatapona-endpoints-endpoints/Zatapona-endpoints-endpoints.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZataponaProject.iml" filepath="$PROJECT_DIR$/ZataponaProject.iml" />
+    </modules>
+  </component>
+</project>
+

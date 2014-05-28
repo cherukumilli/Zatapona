@@ -2,6 +2,7 @@ package com.cheruku.android.zatapona;
 
 import android.os.AsyncTask;
 import android.util.Log;
+
 import com.cheruku.android.zatapona.castmediaendpoint.Castmediaendpoint;
 import com.cheruku.android.zatapona.castmediaendpoint.model.CastMedia;
 import com.cheruku.android.zatapona.castmediaendpoint.model.CollectionResponseCastMedia;
@@ -9,6 +10,7 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.json.jackson.JacksonFactory;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -54,13 +56,16 @@ public class QueryCastMediaTask extends AsyncTask<Void, Void, CollectionResponse
             Log.e(QueryCastMediaTask.class.getName(), "Exception when listing castMedia", exceptionThrown);
         } else {
             mCastMediaList = castMedia.getItems();
-            //mActivity.setVideos(castMedia.getItems());
         }
         mListener.onQueryCastMediaTaskCompleted();
     }
 
     public List<CastMedia> getCastMediaList() {
         return mCastMediaList;
+    }
+
+    public void setOnQueryCastMediaTaskCompleted(OnQueryCastMediaTaskCompleted aOnQueryCastMediaTaskCompleted){
+        mListener = aOnQueryCastMediaTaskCompleted;
     }
 
     public interface OnQueryCastMediaTaskCompleted{

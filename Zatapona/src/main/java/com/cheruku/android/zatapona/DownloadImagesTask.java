@@ -1,15 +1,9 @@
 package com.cheruku.android.zatapona;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 
 /**
@@ -35,7 +29,7 @@ public class DownloadImagesTask extends AsyncTask<String, Integer, ArrayList<Bit
         Log.v("DownloadImagesTask", "in doInBackground");
         try {
             for (String imageUrl : mImageUrlList){
-                Bitmap bitmap = DownloadImage(imageUrl);
+                Bitmap bitmap = (new DownloadImage(imageUrl)).getBitmap();
                 mBitmapList.add(bitmap);
             }
             return mBitmapList;
@@ -52,12 +46,22 @@ public class DownloadImagesTask extends AsyncTask<String, Integer, ArrayList<Bit
         if (exceptionThrown != null) {
             Log.e(DownloadImagesTask.class.getName(), "Exception when listing DownloadImagesTask", exceptionThrown);
         }
-        //else {
-        //    mActivity.setImages(imageList);
-        //}
         mListener.onDownloadImagesTaskCompleted();
     }
 
+    public interface OnDownloadImagesTaskCompleted{
+        public void onDownloadImagesTaskCompleted();
+    }
+
+    public ArrayList<Bitmap> getBitmapList() {
+        return mBitmapList;
+    }
+
+    public void setOnDownloadImagesTaskCompleted(OnDownloadImagesTaskCompleted aOnDownloadImagesTaskCompleted){
+        mListener = aOnDownloadImagesTaskCompleted;
+    }
+
+    /*
     protected InputStream OpenHttpConnection(String urlString) throws IOException {
         Log.v("DownloadImagesTask", "in OpenHttpConnection");
         InputStream in = null;
@@ -96,13 +100,5 @@ public class DownloadImagesTask extends AsyncTask<String, Integer, ArrayList<Bit
             e1.printStackTrace();
         }
         return bitmap;
-    }
-    public ArrayList<Bitmap> getBitmapList() {
-        return mBitmapList;
-    }
-
-
-    public interface OnDownloadImagesTaskCompleted{
-        public void onDownloadImagesTaskCompleted();
-    }
+    } */
 }

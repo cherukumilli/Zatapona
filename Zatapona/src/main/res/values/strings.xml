@@ -30,5 +30,9 @@
     <string name="forward_button">Forward</string>
     <string name="back_button">Back</string>
     <string name="mute_button">Mute</string>
+    <string name="videoImageContentDescription">Image Snapshot of the currently playing video</string>
+    <string name="playPauseButtonContentDescription">Button to pause or play the selected video</string>
+    <string name="init_time_string">0:00</string>
+    <string name="castmediamute_contentdescription">Select button to mute or unmute video playing in Chromecast</string>
 
 </resources>

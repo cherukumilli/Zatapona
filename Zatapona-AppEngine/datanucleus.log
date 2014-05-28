@@ -1,0 +1,218 @@
+05:31:42,656 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+05:31:43,017 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+05:31:43,476 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\DeviceInfo.class" with enhanced definition
+05:31:43,486 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\MessageData.class" with enhanced definition
+05:31:43,492 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=337 ms, enhance=135 ms, total=472 ms. Consult the log for full details
+05:31:58,885 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+05:31:59,094 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+05:31:59,316 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+05:31:59,317 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+05:31:59,318 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=197 ms, enhance=25 ms, total=222 ms. Consult the log for full details
+05:41:29,203 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+05:41:29,415 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+05:41:29,657 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\DeviceInfo.class" with enhanced definition
+05:41:29,667 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\MessageData.class" with enhanced definition
+05:41:29,671 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=195 ms, enhance=60 ms, total=255 ms. Consult the log for full details
+06:56:45,476 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+06:56:45,693 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+06:56:45,916 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+06:56:45,918 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+06:56:45,918 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=198 ms, enhance=25 ms, total=223 ms. Consult the log for full details
+06:57:17,198 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+06:57:17,435 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+06:57:17,656 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+06:57:17,657 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+06:57:17,658 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=195 ms, enhance=26 ms, total=221 ms. Consult the log for full details
+07:01:28,266 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+07:01:28,514 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+07:01:28,800 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\DeviceInfo.class" with enhanced definition
+07:01:28,811 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\MessageData.class" with enhanced definition
+07:01:28,816 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=229 ms, enhance=71 ms, total=300 ms. Consult the log for full details
+17:29:53,973 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+17:29:54,201 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+17:29:54,444 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\DeviceInfo.class" with enhanced definition
+17:29:54,454 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\MessageData.class" with enhanced definition
+17:29:54,458 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=195 ms, enhance=60 ms, total=255 ms. Consult the log for full details
+17:51:53,394 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+17:51:53,606 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+17:51:53,834 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+17:51:53,835 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+17:51:53,836 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=203 ms, enhance=25 ms, total=228 ms. Consult the log for full details
+21:42:24,551 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+21:42:24,782 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+21:42:25,006 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\DeviceInfo.class" with enhanced definition
+21:42:25,016 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\MessageData.class" with enhanced definition
+21:42:25,019 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=180 ms, enhance=56 ms, total=236 ms. Consult the log for full details
+21:51:21,642 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+21:51:21,877 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+21:51:22,120 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+21:51:22,121 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+21:51:22,122 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=217 ms, enhance=25 ms, total=242 ms. Consult the log for full details
+21:57:09,808 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+21:57:10,019 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+21:57:10,245 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+21:57:10,247 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+21:57:10,247 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=201 ms, enhance=25 ms, total=226 ms. Consult the log for full details
+22:24:36,564 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+22:24:36,799 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+22:24:37,040 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+22:24:37,041 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+22:24:37,042 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=214 ms, enhance=27 ms, total=241 ms. Consult the log for full details
+22:34:31,978 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+22:34:32,218 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+22:34:32,474 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+22:34:32,476 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+22:34:32,476 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=228 ms, enhance=29 ms, total=257 ms. Consult the log for full details
+22:46:12,162 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+22:46:12,398 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+22:46:12,677 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\DeviceInfo.class" with enhanced definition
+22:46:12,688 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\MessageData.class" with enhanced definition
+22:46:12,693 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=227 ms, enhance=65 ms, total=292 ms. Consult the log for full details
+16:20:37,602 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+16:20:37,843 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+16:20:38,089 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+16:20:38,091 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+16:20:38,091 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=220 ms, enhance=27 ms, total=247 ms. Consult the log for full details
+18:05:15,918 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+18:05:16,129 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+18:05:16,342 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+18:05:16,343 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+18:05:16,343 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=188 ms, enhance=25 ms, total=213 ms. Consult the log for full details
+18:08:01,136 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+18:08:01,353 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+18:08:01,571 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+18:08:01,573 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+18:08:01,573 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=193 ms, enhance=26 ms, total=219 ms. Consult the log for full details
+00:46:13,334 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+00:46:13,532 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+00:46:13,744 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+00:46:13,745 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+00:46:13,746 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=186 ms, enhance=25 ms, total=211 ms. Consult the log for full details
+03:07:52,715 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:07:52,931 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:07:53,185 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\DeviceInfo.class" with enhanced definition
+03:07:53,195 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\MessageData.class" with enhanced definition
+03:07:53,199 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=201 ms, enhance=65 ms, total=266 ms. Consult the log for full details
+03:11:55,388 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:11:55,584 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:11:55,831 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+03:11:55,833 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+03:11:55,833 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=221 ms, enhance=26 ms, total=247 ms. Consult the log for full details
+03:16:49,150 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:16:49,352 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:16:49,565 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+03:16:49,567 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+03:16:49,567 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 2 classes. Timings : input=187 ms, enhance=25 ms, total=212 ms. Consult the log for full details
+02:58:15,511 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+02:58:15,785 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+02:58:16,145 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\DeviceInfo.class" with enhanced definition
+02:58:16,157 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\MessageData.class" with enhanced definition
+02:58:16,169 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\Note.class" with enhanced definition
+02:58:16,173 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 3 classes. Timings : input=283 ms, enhance=103 ms, total=386 ms. Consult the log for full details
+03:11:02,646 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:11:02,858 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:11:03,076 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+03:11:03,078 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+03:11:03,079 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+03:11:03,079 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 3 classes. Timings : input=193 ms, enhance=26 ms, total=219 ms. Consult the log for full details
+05:13:32,463 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+05:13:32,686 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+05:13:32,964 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\DeviceInfo.class" with enhanced definition
+05:13:32,975 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\MessageData.class" with enhanced definition
+05:13:32,985 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\Note.class" with enhanced definition
+05:13:32,990 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 3 classes. Timings : input=228 ms, enhance=73 ms, total=301 ms. Consult the log for full details
+08:01:00,026 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+08:01:00,797 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+08:01:01,630 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+08:01:01,636 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+08:01:01,730 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\Note.class" with enhanced definition
+08:01:01,743 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 3 classes. Timings : input=736 ms, enhance=203 ms, total=939 ms. Consult the log for full details
+08:58:01,129 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+08:58:01,876 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+08:58:02,692 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+08:58:02,697 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+08:58:02,702 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+08:58:02,703 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 3 classes. Timings : input=724 ms, enhance=98 ms, total=822 ms. Consult the log for full details
+08:59:24,442 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+08:59:25,203 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+08:59:26,061 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+08:59:26,067 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+08:59:26,072 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+08:59:26,073 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 3 classes. Timings : input=759 ms, enhance=103 ms, total=862 ms. Consult the log for full details
+02:33:52,726 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+02:33:52,944 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+02:33:53,212 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\CastMedia.class" with enhanced definition
+02:33:53,217 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+02:33:53,218 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+02:33:53,225 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\Note.class" with enhanced definition
+02:33:53,230 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=203 ms, enhance=81 ms, total=284 ms. Consult the log for full details
+03:03:37,453 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:03:37,656 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:03:37,887 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.CastMedia" is already enhanced.
+03:03:37,888 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+03:03:37,889 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+03:03:37,891 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+03:03:37,891 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=207 ms, enhance=27 ms, total=234 ms. Consult the log for full details
+03:37:10,942 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:37:11,155 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:37:11,389 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.CastMedia" is already enhanced.
+03:37:11,391 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+03:37:11,393 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+03:37:11,395 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+03:37:11,395 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=208 ms, enhance=30 ms, total=238 ms. Consult the log for full details
+04:03:22,344 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+04:03:22,572 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+04:03:22,819 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.CastMedia" is already enhanced.
+04:03:22,821 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+04:03:22,822 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+04:03:22,824 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+04:03:22,824 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=223 ms, enhance=27 ms, total=250 ms. Consult the log for full details
+04:41:14,974 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+04:41:15,250 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+04:41:15,590 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\CastMedia.class" with enhanced definition
+04:41:15,596 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+04:41:15,598 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+04:41:15,600 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+04:41:15,601 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=272 ms, enhance=73 ms, total=345 ms. Consult the log for full details
+04:56:02,699 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+04:56:02,933 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+04:56:03,213 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.CastMedia" is already enhanced.
+04:56:03,214 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+04:56:03,216 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+04:56:03,217 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+04:56:03,217 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=249 ms, enhance=34 ms, total=283 ms. Consult the log for full details
+04:59:44,993 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+04:59:45,225 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+04:59:45,471 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.CastMedia" is already enhanced.
+04:59:45,473 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+04:59:45,474 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+04:59:45,476 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+04:59:45,476 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=218 ms, enhance=32 ms, total=250 ms. Consult the log for full details
+03:51:17,500 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:51:17,743 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:51:18,049 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\CastMedia.class" with enhanced definition
+03:51:18,083 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+03:51:18,085 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+03:51:18,086 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+03:51:18,086 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=234 ms, enhance=108 ms, total=342 ms. Consult the log for full details
+03:52:31,886 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+03:52:32,146 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+03:52:32,435 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.CastMedia" is already enhanced.
+03:52:32,437 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+03:52:32,438 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+03:52:32,440 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+03:52:32,441 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=257 ms, enhance=35 ms, total=292 ms. Consult the log for full details
+04:03:08,922 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+04:03:09,126 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+04:03:09,394 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\ZataponaProject\Zatapona-AppEngine\target\Zatapona-AppEngine-1.0\WEB-INF\classes\com\cheruku\android\zatapona\CastMedia.class" with enhanced definition
+04:03:09,399 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+04:03:09,400 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+04:03:09,402 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+04:03:09,403 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=220 ms, enhance=55 ms, total=275 ms. Consult the log for full details
+04:03:50,812 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer for API "JDO"
+04:03:51,053 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 3.1.1) : Enhancement of classes
+04:03:51,313 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.CastMedia" is already enhanced.
+04:03:51,315 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.DeviceInfo" is already enhanced.
+04:03:51,316 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.MessageData" is already enhanced.
+04:03:51,318 (main) INFO  [DataNucleus.Enhancer] - Class "com.cheruku.android.zatapona.Note" is already enhanced.
+04:03:51,318 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes. Timings : input=232 ms, enhance=32 ms, total=264 ms. Consult the log for full details
